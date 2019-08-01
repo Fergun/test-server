@@ -12,8 +12,8 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(express.static('public'))
 app.use('/', router);
-
-app.listen(config.PORT, () => {
+var port = process.env.PORT || 8080;
+app.listen(port, () => {
     console.log(`listening on ${config.PORT}`);
 });
 
